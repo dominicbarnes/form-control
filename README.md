@@ -2,6 +2,8 @@
 
 Retrieve a form element/input by name
 
+[![browser support](https://ci.testling.com/dominicbarnes/form-element.png)](https://ci.testling.com/dominicbarnes/form-element)
+
 
 ## Usage
 
