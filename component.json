@@ -1,0 +1,29 @@
+{
+  "name": "form-element",
+  "repository": "dominicbarnes/form-element",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Retrieve a form element by name",
+  "keywords": [
+    "forms",
+    "input",
+    "helper"
+  ],
+  "development": {
+    "dependencies": {
+      "component/assert": "*",
+      "component/domify": "*",
+      "component/value": "*",
+      "visionmedia/mocha": "*"
+    },
+    "scripts": [
+      "test/index.js"
+    ],
+    "templates": [
+      "test/form.html"
+    ]
+  },
+  "scripts": [
+    "index.js"
+  ]
+}
