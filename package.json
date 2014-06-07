@@ -8,7 +8,10 @@
   "testling": {
     "harness": "mocha",
     "browsers": [
-      "chrome/22..latest"
+      "ie/8..latest",
+      "chrome/latest",
+      "firefox/latest",
+      "safari/latest"
     ],
     "preprocess": "npm run build",
     "scripts": [
