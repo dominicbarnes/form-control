@@ -10,6 +10,7 @@
     "browsers": [
       "chrome/22..latest"
     ],
+    "preprocess": "npm run build",
     "scripts": [
       "build/build.js"
     ]
