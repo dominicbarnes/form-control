@@ -1,9 +1,6 @@
 # form-element
 
-Retrieve a form element/input by name
-
-[![browser support](https://ci.testling.com/dominicbarnes/form-element.png)](https://ci.testling.com/dominicbarnes/form-element)
-
+A cross-browser helper function to retrieve a form element/input by name.
 
 ## Usage
 

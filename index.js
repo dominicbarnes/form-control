@@ -14,7 +14,9 @@ module.exports = function (form, name) {
         throw new TypeError("An HTML form element is required");
     }
 
-    var input = form.elements.namedItem(name);
+    var input = "namedItem" in form
+        ? form.namedItem(name)
+        : form.elements.namedItem(name);
 
     if (!input) {
         throw new RangeError("Form does not contain element with name: " + name);
