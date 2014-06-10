@@ -16,9 +16,6 @@
       "component/value": "*",
       "visionmedia/mocha": "*"
     },
-    "scripts": [
-      "test/index.js"
-    ],
     "templates": [
       "test/form.html"
     ]

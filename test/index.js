@@ -12,6 +12,13 @@ describe("element(form, name)", function () {
         assert.equal(value(input), "dominicbarnes");
     });
 
+    it("should retrieve the password field", function () {
+        var input = element(form, "password");
+
+        assert.equal(input.name, "password");
+        assert.equal(value(input), "123456");
+    });
+
     it("should retrieve an array for radio fields", function () {
         var inputs = element(form, "gender");
 
@@ -20,6 +27,13 @@ describe("element(form, name)", function () {
         assert.equal(value(inputs[0]), "male");
         assert.equal(inputs[1].name, "gender");
         assert(!value(inputs[1]));
+    });
+
+    it("should retrieve the age field", function () {
+        var input = element(form, "age");
+
+        assert.equal(input.name, "age");
+        assert.equal(value(input), "76-100");
     });
 
     it("should throw a TypeError when not given a form", function () {

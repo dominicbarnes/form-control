@@ -20,5 +20,12 @@ module.exports = function (form, name) {
         throw new RangeError("Form does not contain element with name: " + name);
     }
 
-    return input;
+    // HACK: IE9 only retrieves a single element when using namedItem (even if it's
+    // a checkbox/radio button which may have multiple elements with the same name)
+    if (input.type === "checkbox" || input.type === "radio") {
+        var retry = form.elements.item(name);
+        if (retry) return retry;
+    } else {
+        return input;
+    }
 };
