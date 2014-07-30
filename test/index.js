@@ -4,22 +4,22 @@ var element = require("form-element");
 var value = require("value");
 var form = domify(require("form-element/test/form.html"));
 
-describe("element(form, name)", function () {
+describe("element(root, name)", function () {
     it("should retrieve the username field", function () {
-        var input = element(form, "username");
+        var input = element(form, "user[name]");
 
-        assert.equal(input.name, "username");
+        assert.equal(input.name, "user[name]");
         assert.equal(value(input), "dominicbarnes");
     });
 
     it("should retrieve the password field", function () {
-        var input = element(form, "password");
+        var input = element(form, "user[password]");
 
-        assert.equal(input.name, "password");
+        assert.equal(input.name, "user[password]");
         assert.equal(value(input), "123456");
     });
 
-    it("should retrieve an array for radio fields", function () {
+    it("should retrieve a nodelist for radio fields", function () {
         var inputs = element(form, "gender");
         assert.equal(inputs.length, 2);
     });
@@ -31,20 +31,49 @@ describe("element(form, name)", function () {
         assert.equal(value(input), "76-100");
     });
 
-    it("should retrieve an array for checkbox fields", function () {
+    it("should retrieve a nodelist for checkbox fields", function () {
         var inputs = element(form, "tags");
         assert.equal(inputs.length, 4);
     });
 
-    it("should throw a TypeError when not given a form", function () {
+    it("should throw a TypeError when not given an element", function () {
         assert.throws(function () {
             element(null);
         }, TypeError);
     });
 
-    it("should throw a RangeError when the requested input is not found", function () {
-        assert.throws(function () {
-            element(form, "does-not-exist");
-        }, RangeError);
+    it("should return a fieldset if it has a name", function () {
+        var fieldset = element(form, "user");
+
+        assert(fieldset.getAttribute("name") === "user");
+        assert(fieldset instanceof HTMLFieldSetElement);
+    });
+
+    describe("when used with a fieldset", function () {
+        var fieldset = element(form, "user");
+
+        it("should return an element nested in the fieldset", function () {
+            var input = element(fieldset, "user[name]");
+            assert(input.name === "user[name]");
+        });
+
+        it("should not find an element outside it's hierarchy", function () {
+            var input = element(fieldset, "age");
+            assert(!input);
+        });
+    });
+
+    describe("when used with arbitrary elements", function () {
+        var root = form.querySelector("#test");
+
+        it("should return an element nested in the fieldset", function () {
+            var input = element(root, "age");
+            assert(input.name === "age");
+        });
+
+        it("should not find an element outside it's hierarchy", function () {
+            var input = element(root, "gender");
+            assert(!input);
+        });
     });
 });

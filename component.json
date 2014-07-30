@@ -1,7 +1,7 @@
 {
   "name": "form-element",
   "repository": "dominicbarnes/form-element",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Retrieve a form element by name",
   "keywords": [
