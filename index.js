@@ -16,7 +16,9 @@ module.exports = function (root, name) {
     }
 
     if ("namedItem" in root) {
-        return normalize(root.namedItem(name));
+        // the short-circuit here is because IE won't find things like <fieldset> even
+        // when they have an assigned name
+        return normalize(root.namedItem(name) || bruteForce(root, name));
     } else if (root.elements) {
         return normalize(root.elements.namedItem(name));
     } else {
