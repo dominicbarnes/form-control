@@ -1,24 +1,36 @@
 {
   "name": "form-element",
+  "description": "A cross-browser helper function to retrieve a form control by name.",
   "version": "0.1.1",
+  "author": "Dominic Barnes",
   "browser": {
     "value": "component-value"
   },
-  "dependencies": {
-    "component": "^1.0.0",
-    "component-test": "*"
-  },
+  "bugs": "https://github.com/dominicbarnes/form-element/issues",
+  "dependencies": {},
   "devDependencies": {
-    "component-test": "~0.1.3",
     "component-value": "^1.1.0",
     "domify": "^1.4.0",
     "duo-tester": "^0.1.1",
     "mochify": "^2.13.0",
     "stringify": "^3.1.0"
   },
+  "homepage": "https://github.com/dominicbarnes/form-element/",
+  "keywords": [
+    "browser",
+    "controls",
+    "form",
+    "html"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominicbarnes/form-element.git"
+  },
   "scripts": {
-    "test": "npm run test-duo && npm run test-node",
     "start": "duo-tester browser",
+    "test": "npm run test-duo && npm run test-node",
     "test-duo": "duo-tester phantomjs",
     "test-node": "mochify --transform stringify"
   }
