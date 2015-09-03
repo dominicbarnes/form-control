@@ -1,8 +1,8 @@
 var assert = require("assert");
 var domify = require("domify");
-var element = require("form-element");
+var element = require("../index.js");
 var value = require("value");
-var form = domify(require("form-element/test/form.html"));
+var form = domify(require("./form.html"));
 
 describe("element(root, name)", function () {
     it("should retrieve the username field", function () {
