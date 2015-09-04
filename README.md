@@ -1,6 +1,18 @@
 # form-element
 
+[![npm][npm-image]][npm-url]
+[![travis][travis-image]][travis-url]
+
+[npm-image]: https://img.shields.io/npm/v/form-element.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/form-element
+[travis-image]: https://img.shields.io/travis/dominicbarnes/form-element.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dominicbarnes/form-element
+
 A cross-browser helper function to retrieve a form control by name.
+
+## Install
+
+  `npm install form-element`
 
 ## Usage
 

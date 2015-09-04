@@ -9,16 +9,14 @@
     "input",
     "helper"
   ],
+  "dependencies": {
+    "component/domify": "*",
+    "component/value": "*"
+  },
   "development": {
     "dependencies": {
-      "component/assert": "*",
-      "component/domify": "*",
-      "component/value": "*",
-      "visionmedia/mocha": "*"
-    },
-    "templates": [
-      "test/form.html"
-    ]
+      "component/assert": "*"
+    }
   },
   "scripts": [
     "index.js"
