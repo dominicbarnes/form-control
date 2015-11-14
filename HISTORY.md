@@ -1,4 +1,9 @@
 
+1.0.0 / 2015-11-13
+==================
+
+  * porting to build with mako instead of component/duo
+
 # 0.1.1 (7/30/2014)
  * using the "brute force" search as a fallback for IE (see 8b71ddb4ec7514041bc29abc68d5e8ef6b580bd2)
 

@@ -1,6 +1,6 @@
 {
   "name": "form-control",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A cross-browser helper function to retrieve a form control by name.",
   "author": "Dominic Barnes <dominic@dbarnes.info>",
   "repository": "dominicbarnes/form-control",
