@@ -1,18 +1,11 @@
-# form-element
+# form-control
 
-[![npm][npm-image]][npm-url]
-[![travis][travis-image]][travis-url]
-
-[npm-image]: https://img.shields.io/npm/v/form-element.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/form-element
-[travis-image]: https://img.shields.io/travis/dominicbarnes/form-element.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dominicbarnes/form-element
+[![npm version](https://img.shields.io/npm/v/form-control.svg)](https://www.npmjs.com/package/form-control)
+[![npm dependencies](https://img.shields.io/david/dominicbarnes/form-control.svg)](https://david-dm.org/dominicbarnes/form-control)
+[![npm dev dependencies](https://img.shields.io/david/dev/dominicbarnes/form-control.svg)](https://david-dm.org/dominicbarnes/form-control#info=devDependencies)
+[![build status](https://img.shields.io/travis/dominicbarnes/form-control.svg)](https://travis-ci.org/dominicbarnes/form-control)
 
 A cross-browser helper function to retrieve a form control by name.
-
-## Install
-
-  `npm install form-element`
 
 ## Usage
 
@@ -30,24 +23,24 @@ A cross-browser helper function to retrieve a form control by name.
 ```
 
 ```js
-var element = require("form-element");
-var form = document.querySelector("#my-form");
+var element = require('form-element');
+var form = document.querySelector('#my-form');
 
-element(form, "username");
+element(form, 'username');
 // => <input type="text" name="username">
 
-element(form, "accept");
+element(form, 'accept');
 // => <input type="checkbox" name="accept">
 
-element(form, "does-not-exist");
+element(form, 'does-not-exist');
 // => null ... this element does not exist at all
 
 
 // restrict search to a specific fieldset
 
-var fieldset = element(form, "user");
+var fieldset = element(form, 'user');
 
-element(fieldset, "accept");
+element(fieldset, 'accept');
 // => null ... this element is not part of the <fieldset>
 ```
 

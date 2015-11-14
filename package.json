@@ -1,21 +1,9 @@
 {
-  "name": "form-element",
+  "name": "form-control",
   "description": "A cross-browser helper function to retrieve a form control by name.",
+  "repository": "dominicbarnes/form-control",
   "version": "0.1.1",
   "author": "Dominic Barnes",
-  "browser": {
-    "value": "component-value"
-  },
-  "bugs": "https://github.com/dominicbarnes/form-element/issues",
-  "dependencies": {},
-  "devDependencies": {
-    "component-value": "^1.1.0",
-    "domify": "^1.4.0",
-    "duo-tester": "^0.1.1",
-    "mochify": "^2.13.0",
-    "stringify": "^3.1.0"
-  },
-  "homepage": "https://github.com/dominicbarnes/form-element/",
   "keywords": [
     "browser",
     "controls",
@@ -23,15 +11,23 @@
     "html"
   ],
   "license": "MIT",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/dominicbarnes/form-element.git"
+  "dependencies": {
+    "to-array": "^0.1.4"
+  },
+  "devDependencies": {
+    "@dominicbarnes/eslint-config": "*",
+    "@dominicbarnes/eslint-config-browser": "*",
+    "@dominicbarnes/eslint-config-mako": "*",
+    "@dominicbarnes/eslint-config-test": "*",
+    "component-value": "^1.1.0",
+    "eslint": "^1.9.0",
+    "eslint-plugin-require-path-exists": "^1.0.18",
+    "zuul": "^3.7.2"
   },
   "scripts": {
-    "start": "duo-tester browser",
-    "test": "npm run test-duo && npm run test-node",
-    "test-duo": "duo-tester phantomjs",
-    "test-node": "mochify --transform stringify"
+    "lint": "eslint .",
+    "start": "zuul --local 7000 test",
+    "pretest": "npm run lint",
+    "test": "zuul -- test"
   }
 }
