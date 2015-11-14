@@ -1,12 +1,12 @@
 {
   "name": "form-control",
-  "description": "A cross-browser helper function to retrieve a form control by name.",
-  "repository": "dominicbarnes/form-control",
   "version": "0.1.1",
-  "author": "Dominic Barnes",
+  "description": "A cross-browser helper function to retrieve a form control by name.",
+  "author": "Dominic Barnes <dominic@dbarnes.info>",
+  "repository": "dominicbarnes/form-control",
   "keywords": [
     "browser",
-    "controls",
+    "control",
     "form",
     "html"
   ],
